@@ -1,0 +1,46 @@
+//headings
+.heading {
+
+    &__1 {
+        &--white {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 4.2rem;
+            color: $color-primary;
+        }
+    }
+    
+    &__2 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2.8rem;
+    }
+
+    &__3 {
+
+        &--white {
+            color: $color-primary;
+            font-size: 1.8rem;
+        }
+
+    }
+
+}
+
+.paragraph {
+
+    &__normal {
+        font-size: 1.6rem;
+        color: $color-dark;
+        line-height: 1.3;
+        font-weight: 300;
+    }
+
+    &__desc {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: $font-details;
+        color: $color-primary;
+    }
+
+}

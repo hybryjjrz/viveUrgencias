@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&display=swap")        
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&family=Ubuntu:ital,wght@0,300;0,400;1,400;0,700&display=swap")
+        link(rel="stylesheet", href="/css/style.css", type="text/css")
+        
+
+
+
+        title #{siteName} | #{page}
+
+    body 
+        .container
+            .container__left
+                .presentation
+                    img(src="img/viveUrgenciasLogo.png", alt="Logo Principal").presentation__logo
+                    h1.heading__1--white ¡Bienvenido!
+                    .presentation__desc
+                        p.paragraph__desc Inserta tus datos para continuar
+                    .presentation__foot    
+                        h3.heading__3--white Cuidando de ti
+                        img(src="img/sphere.png", alt="Esfera blanca").presentation__logo--aux
+
+
+
+            .container__right
+                .login
+                    h2.heading__2 Ingresar
+                    form(action="POST" id="mainForm").login__form
+                        .input__data    
+                            input(type="text" name="usuario" id="usuario" placeholder="" required).input__data--input
+                            .input__data--underline
+                            label.input__data--label(for="usuario") Usuario
+                        br
+                        br
+                        .input__data
+                            input(type="password" name="contraseña" id="contraseña" placeholder="" required).login__input.input__data--input
+                            .input__data--underline
+                            label.login__label.input__data--label(for="contraseña") Contraseña
+                        br
+                        br
+                        a(href="#").login__anchor.login__anchor--right Olvidé mi contraseña 
+                        br
+                        br
+                        button(type="submit" form="mainForm").btn__submit Ingresar
+                        br
+                        br
+                        a(href="#").login__anchor Registrarse
+
+                
+        

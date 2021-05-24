@@ -1,0 +1,105 @@
+//BUTTONS
+.btn {
+
+    &__submit {
+        background-color: $color-highlight;
+        color: $color-primary;
+        padding: 1.2rem 10rem;
+        font-weight: 700;
+        font-size: 2rem;
+        border: none;
+        border-radius: 7rem;
+        box-shadow: .25rem .25rem .25rem rgba($color-dark, 0.5); //horizontalPlacement verticalP blur color
+        transition: all .2s ease;
+    }
+
+    &__submit:hover {
+        background-color: $color-highlight-dark;
+    }
+
+}
+
+//ANIMATED LABEL-INPUT
+.input__data {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+
+    &--input {
+
+        height: 100%;
+        width: 80%;
+        border: none;
+        font-size: 1.7rem;
+        border-bottom: 2px solid $color-dark;
+        background: transparent;
+
+    }
+
+    
+    &--input:focus ~ &--label,
+    &--input:valid ~ &--label {
+
+        transform: translateY(-2rem);
+        font-size: 1.5rem;
+        color: $color-highlight;
+
+    }
+
+    &--input:focus-visible {
+
+        outline: none;
+
+    }
+
+    &--label {
+
+        position: absolute;
+        bottom: 1rem;
+        left: 3.2rem;
+        color: $color-dark;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        font-size: 1.3rem;
+
+    }
+
+    
+    &--underline { //create an empty element that'll have a content displayed when the input is valid or focused
+     
+        position: absolute;
+        height: .2rem;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+
+    }
+
+    &--underline::before {
+        
+        position: absolute;
+        content: "";
+        height: 100%; //100% of the original element, which is .underline
+        width: 100%; //of the original element
+        background-color: $color-positive;
+        transform: scaleX(0); //to make it disappear
+        transform-origin: center; //to set the origin of the animation
+        transition: transform .5s ease;
+        bottom: 0;
+        left: 0;
+
+    }
+
+
+    &--input:focus ~ &--underline:before,
+    &--input:valid ~ &--underline:before {
+        
+        transform: scaleX(1); //to make it visible
+
+    }
+
+  
+}
+//------- for the animation of the label to work the inputs most have the "required" attribute (without it the inputs will be focused from the moment the page loads)
+

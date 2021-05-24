@@ -1,0 +1,82 @@
+// COLOR VARIABLES
+$color-primary: #FFFFFF; //backgrounds
+$color-primary-dark: #F5F5F5; //cards
+
+$color-main: #2B8FEC;     //menu and buttons
+$color-main-titles: #007BE7;    
+
+$color-dark: #444249;   //text and modal backgrounds with opacity
+ 
+$color-highlight: #845DF4; //submit butons and highlighted text
+$color-highlight-dark: #6147AD;
+
+$color-alert: #FF2F2F;
+
+ $color-positive: #26C1B8;
+
+// FONT VARIABLES
+$font-primary: 'Ubuntu', sans-serif;
+$font-details: 'Open Sans', sans-serif;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //so that 1rem is exactly equal to 10px  || 10px/16px = 62.5%
+}
+
+
+body {
+    font-family: $font-primary;
+    color: $color-dark;
+    font-weight: 300;
+    line-height: 1.5;
+   
+}
+
+.container-main {
+    
+    // background-image: url(../img/double-bubble.png);
+    // background-size: auto;
+    // background-position: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center; //for this to work the flex container must have a defined height
+    
+}
+
+.main-content {
+
+    // background-color: $color-dark;
+    width: 95%;
+    height: 95%;
+    border: 1rem solid $color-primary-dark;
+
+    display: grid;
+    grid-template-columns: [sidebar-start] 22rem [sidebar-end main-start] calc(100% - 22rem) [main-end];
+    grid-template-rows: 100%;
+
+    &__left {
+        grid-column: sidebar-start / sidebar-end;
+    }
+
+    &__right { //when defining right we need to set the height and width (maybe)
+        
+        grid-column: sidebar-end / main-end;
+        background-image: url(../img/double-bubble.png);
+        background-size: auto;
+        background-position: center;
+
+    }
+
+}
